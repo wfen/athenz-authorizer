@@ -204,7 +204,7 @@ func New(opts ...Option) (Authorizerd, error) {
 	}
 
 	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
-	glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
+	glg.Get().SetWriter(authWriter).SetLevel(glg.ERR).SetMode(glg.WRITER)
 
 	// create authorizers
 	if err = prov.initAuthorizers(); err != nil {
