@@ -203,6 +203,9 @@ func New(opts ...Option) (Authorizerd, error) {
 		}
 	}
 
+	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
+	glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
+
 	// create authorizers
 	if err = prov.initAuthorizers(); err != nil {
 		return nil, errors.Wrap(err, "error create authorizers")
@@ -295,8 +298,6 @@ func (a *authority) Init(ctx context.Context) error {
 
 // Start starts authority daemon.
 func (a *authority) Start(ctx context.Context) <-chan error {
-	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
-    glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
 	var (
 		ech              = make(chan error, 200)
 		g                = a.cache.StartExpired(ctx, a.cacheExp/2)
@@ -364,8 +365,6 @@ func (a *authority) AuthorizeAccessToken(ctx context.Context, tok, act, res stri
 }
 
 func (a *authority) authorize(ctx context.Context, m mode, tok, act, res, query string, cert *x509.Certificate) (Principal, error) {
-	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
-    glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
 	var key strings.Builder
 	key.WriteString(tok)
 

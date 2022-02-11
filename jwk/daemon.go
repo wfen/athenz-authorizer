@@ -65,8 +65,6 @@ func New(opts ...Option) (Daemon, error) {
 }
 
 func (j *jwkd) Start(ctx context.Context) <-chan error {
-	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
-    glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
 	glg.Info("Starting jwk updater")
 	ech := make(chan error, 100)
 	fch := make(chan struct{}, 1)
