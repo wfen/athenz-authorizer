@@ -155,9 +155,7 @@ func (p *policyd) Start(ctx context.Context) <-chan error {
 // Update updates and cache policy data
 func (p *policyd) Update(ctx context.Context) error {
 	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
-	glg.Get().DisableColor()
-	glg.Get().SetWriter(authWriter)
-	glg.Get().SetLevel(glg.DEBUG)
+	glg.Get().DisableColor().SetWriter(authWriter).SetLevel(glg.DEBG)
 	jobID := fastime.Now().Unix()
 	glg.Infof("[%d] will update policy", jobID)
 	eg := errgroup.Group{}
