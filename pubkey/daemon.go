@@ -102,6 +102,8 @@ func New(opts ...Option) (Daemon, error) {
 
 // Start starts the pubkey daemon to retrive the public key periodically
 func (p *pubkeyd) Start(ctx context.Context) <-chan error {
+	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
+    glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
 	glg.Info("Starting pubkey updater")
 
 	ech := make(chan error, 100)

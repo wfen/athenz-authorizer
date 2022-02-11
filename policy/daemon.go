@@ -107,6 +107,8 @@ func New(opts ...Option) (Daemon, error) {
 
 // Start starts the Policy daemon to retrive the policy data periodically
 func (p *policyd) Start(ctx context.Context) <-chan error {
+	authWriter := glg.FileWriter("/var/log/systemregistry/auth.log", 0644)
+    glg.Get().SetWriter(authWriter).SetLevel(glg.DEBG)
 	glg.Info("Starting policyd updater")
 	ech := make(chan error, 100)
 	fch := make(chan struct{}, 1)
