@@ -23,8 +23,8 @@ import (
 	"time"
 
 	authcore "github.com/AthenZ/athenz/libs/go/zmssvctoken"
-	urlutil "github.com/yahoojapan/athenz-authorizer/v5/internal/url"
-	"github.com/yahoojapan/athenz-authorizer/v5/pubkey"
+	urlutil "github.com/wfen/athenz-authorizer/v5/internal/url"
+	"github.com/wfen/athenz-authorizer/v5/pubkey"
 )
 
 func TestWithExpiryMargin(t *testing.T) {

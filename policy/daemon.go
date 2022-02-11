@@ -32,7 +32,7 @@ import (
 	"github.com/kpango/gache"
 	"github.com/kpango/glg"
 	"github.com/pkg/errors"
-	"github.com/yahoojapan/athenz-authorizer/v5/pubkey"
+	"github.com/wfen/athenz-authorizer/v5/pubkey"
 	"golang.org/x/sync/errgroup"
 )
 

@@ -24,7 +24,7 @@ import (
 	"github.com/golang-jwt/jwt"
 	"github.com/lestrrat-go/jwx/jws"
 	"github.com/pkg/errors"
-	"github.com/yahoojapan/athenz-authorizer/v5/jwk"
+	"github.com/wfen/athenz-authorizer/v5/jwk"
 )
 
 const (

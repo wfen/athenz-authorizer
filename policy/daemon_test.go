@@ -34,7 +34,7 @@ import (
 	"github.com/kpango/fastime"
 	"github.com/kpango/gache"
 	"github.com/pkg/errors"
-	"github.com/yahoojapan/athenz-authorizer/v5/pubkey"
+	"github.com/wfen/athenz-authorizer/v5/pubkey"
 )
 
 func newGache() *gache.Gache {

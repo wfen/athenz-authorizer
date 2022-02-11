@@ -24,7 +24,7 @@ import (
 	"github.com/pkg/errors"
 
 	"github.com/AthenZ/athenz/utils/zpe-updater/util"
-	"github.com/yahoojapan/athenz-authorizer/v5/pubkey"
+	"github.com/wfen/athenz-authorizer/v5/pubkey"
 )
 
 // SignedPolicy represents the signed policy data

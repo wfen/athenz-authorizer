@@ -20,7 +20,7 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/yahoojapan/athenz-authorizer/v5/jwk"
+	"github.com/wfen/athenz-authorizer/v5/jwk"
 )
 
 var (

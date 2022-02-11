@@ -25,7 +25,7 @@ import (
 	"github.com/ardielle/ardielle-go/rdl"
 	"github.com/kpango/fastime"
 	"github.com/pkg/errors"
-	"github.com/yahoojapan/athenz-authorizer/v5/pubkey"
+	"github.com/wfen/athenz-authorizer/v5/pubkey"
 )
 
 func TestSignedPolicy_Verify(t *testing.T) {

@@ -21,10 +21,10 @@ import (
 	"time"
 
 	"github.com/pkg/errors"
-	"github.com/yahoojapan/athenz-authorizer/v5/access"
-	"github.com/yahoojapan/athenz-authorizer/v5/jwk"
-	"github.com/yahoojapan/athenz-authorizer/v5/pubkey"
-	"github.com/yahoojapan/athenz-authorizer/v5/role"
+	"github.com/wfen/athenz-authorizer/v5/access"
+	"github.com/wfen/athenz-authorizer/v5/jwk"
+	"github.com/wfen/athenz-authorizer/v5/pubkey"
+	"github.com/wfen/athenz-authorizer/v5/role"
 )
 
 type ConfdMock struct {
