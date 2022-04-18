@@ -163,6 +163,12 @@ func (a *atp) validateCertPrincipal(cert *x509.Certificate, claims *OAuth2Access
 		return errors.Errorf("error certificate and access token principal mismatch: %v vs %v", cn, clientID)
 	}
 
+	// if the access token cert offset is set to -1 then we only need to verify that the certificate principal
+	// matches to the token client id which we have already verified thus we'll return success
+	if (a.clientCertificateOffsetSeconds == -1) {
+		return nil
+	}
+
 	// usecase: new cert + old token, after certificate rotation
 	atIssueTime := claims.IssuedAt
 	certActualIssueTime := cert.NotBefore.Unix() + a.clientCertificateGoBackSeconds
